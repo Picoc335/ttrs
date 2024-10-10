@@ -1,0 +1,196 @@
+/* Стили для body */
+body {
+    font-family: system-ui; /* Используем системный шрифт */
+    background-color: rgb(255, 236, 141); /* Цвет фона */
+    color: black; /* Цвет текста */
+    text-align: center; /* Выравниваем текст по центру */
+    margin: 0; /* Убираем внешние отступы */
+    padding: 0; /* Убираем внутренние отступы */
+  padding-top: 80px;
+}
+
+/* Стили для div */
+div {
+    font-family: 'Comic Sans MS', 'Comic Sans', cursive; /* Используем шрифт Comic Sans MS */
+    position: relative; /* Изменяем позиционирование на относительное */
+}
+
+/* Стили для изображения */
+img {
+    width: 12%; /* Задаем ширину изображения в процентах от родительского элемента */
+    height: auto; /* Автоматическое подстраивание высоты */
+    position: absolute; /* Позиционируем абсолютно */
+    top: 0; /* Задаем отступ сверху */
+    left: 0; /* Задаем отступ слева */
+}
+
+/* Стили для заголовка */
+h1 {color:black;
+   padding: 0;
+    margin: 0;
+    text-align: left;
+    margin-left: 10px;
+    font-size: 50px;
+    text-decoration: none; /* Убираем подчеркивание */
+}
+
+/* Стили для навигационной панели */
+nav { 
+    background-color: #FF4500; /* Цвет фона навигационной панели */
+    padding: 20px; /* Отступы внутри навигационной панели */
+    text-align: center; /* Выравниваем элементы по центру */
+}
+
+nav a { 
+   
+    color: white; /* Цвет текста ссылок */
+    text-decoration: none; /* Убираем подчеркивание ссылок */
+    padding: 19px 65px; /* Отступы внутри кнопок */
+    margin: 0 20px; /* Отступы между кнопками */
+    border-radius: 5px; /* Скругляем углы кнопок */
+}
+
+nav a:hover { 
+    background-color:#999 ; /* Цвет фона при наведении курсора */
+}
+
+/* Другие стили для навигационной панели */
+nav { 
+    width: 100%; /* Уменьшаем ширину до 50% от родительского элемента */
+    height: 10px; /* Устанавливаем высоту 
+  50px */
+      position: fixed; /* Фиксирует панель в верхней части экрана */
+    top: 0;          /* Позиционирует панель сверху */
+    width: 100%;     /* Растягивает панель на всю ширину экрана */
+    z-index: 1000;   /* Помещает панель на передний план */
+
+}
+a {
+    text-decoration: none;
+}
+.overlay{position: absolute;
+  top: 40%;
+    left: 15%; /* Размещаем элемент справа */
+    margin-left: -200px;
+    font-size: 30px;
+    width: 1400px; /* Пример ширины */
+    height: 100%; /* Занимает всю высоту */
+    /* Другие свойства стиля */
+}
+.gray-text a {padding: 19px 15px; /* Отступы внутри кнопок */
+    
+   
+color: black; /* Делаем текст серым */
+},
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color: #f4f4f4;
+}
+
+.container {
+   margin-top: 100px;
+  max-width: 600px;
+  margin: 40 auto;
+  background-color: #fff;
+  padding: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+h1 {
+  text-align: center;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  display: block;
+  margin: 20px auto;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 500px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  word-wrap: break-word;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input[type="text"],
+textarea {
+  margin-bottom: 15px;
+  padding: 13px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.post {
+  background-color: #e9ecef;
+  padding: 15px;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  word-wrap: break-word;
+}
+
+.post h2 {
+  margin-top: 0;
+}

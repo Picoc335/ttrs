@@ -1,0 +1,94 @@
+// Получаем элементы
+const modal = document.getElementById('postModal');
+const openModalBtn = document.getElementById('openModalBtn');
+const closeModalBtn = document.querySelector('.close');
+const postsContainer = document.getElementById('posts');
+
+// Открываем модальное окно
+openModalBtn.onclick = function() {
+  modal.style.display = 'block';
+};
+
+// Закрываем модальное окно
+closeModalBtn.onclick = function() {
+  modal.style.display = 'none';
+};
+
+// Закрываем модальное окно, если пользователь кликнул вне его
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = 'none';
+  }
+};
+
+// Функция для загрузки постов из LocalStorage
+function loadPosts() {
+  const posts = JSON.parse(localStorage.getItem('posts')) || [];
+  posts.forEach(postData => {
+    createPostElement(postData.title, postData.content);
+  });
+}
+
+// Функция для создания и добавления поста в DOM
+function createPostElement(title, content) {
+  const post = document.createElement('div');
+  post.className = 'post';
+
+  const postTitle = document.createElement('h2');
+  postTitle.textContent = title;
+
+  const postContent = document.createElement('p');
+  postContent.textContent = content;
+
+  post.appendChild(postTitle);
+  post.appendChild(postContent);
+
+  // Добавление поста в контейнер
+  postsContainer.appendChild(post);
+}
+
+// Обработка отправки формы
+document.getElementById('postForm').addEventListener('submit', function(event) {
+  event.preventDefault();
+
+  // Получение значений полей формы
+  const title = document.getElementById('title').value;
+  const content = document.getElementById('content').value;
+
+  // Сохранение поста в LocalStorage
+  const posts = JSON.parse(localStorage.getItem('posts')) || [];
+  posts.push({ title, content });
+  localStorage.setItem('posts', JSON.stringify(posts));
+
+  // Создание нового элемента для поста
+  createPostElement(title, content);
+
+  // Очистка полей формы
+  document.getElementById('postForm').reset();
+
+  // Закрытие модального окна
+  modal.style.display = 'none';
+});
+
+// Загрузка постов при загрузке страницы
+window.onload = loadPosts;
+
+const express = require('express');
+const app = express();
+app.use(express.json());
+
+let ads = [];
+
+app.post('/api/ads', (req, res) => {
+    const newAd = req.body;
+    ads.push(newAd);
+    res.status(201).send(newAd);
+});
+
+app.get('/api/ads', (req, res) => {
+    res.send(ads);
+});
+
+app.listen(3000, () => {
+    console.log('Server is running on port 3000');
+});
